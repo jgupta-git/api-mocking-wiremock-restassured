@@ -1,0 +1,16 @@
+[
+   {
+      "id":1,
+      "firstName":"J",
+      "lastName":"Doe",
+      "email":"j.doe@example.com",
+      "isActive":true
+   },
+   {
+      "id":2,
+      "firstName":"M",
+      "lastName":"Smith",
+      "email":"m.smith@example.com",
+      "isActive":true
+   }
+]

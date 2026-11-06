@@ -1,0 +1,33 @@
+{
+   "request":{
+      "method":"POST",
+      "url":"/api/users",
+      "headers":{
+         "Content-Type":{
+            "contains":"application/json"
+         }
+      },
+      "bodyPatterns":[
+         {
+            "matchesJsonPath":"$.firstName"
+         },
+         {
+            "matchesJsonPath":"$.lastName"
+         },
+         {
+            "matchesJsonPath":"$.email"
+         }
+      ]
+   },
+   "response":{
+      "status":201,
+      "headers":{
+         "Content-Type":"application/json"
+      },
+      "jsonBody":{
+         "status":"Success",
+         "message":"User created successfully",
+         "userId":3
+      }
+   }
+}

@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/withdrawal",
+    "headers": {
+      "Content-Type": {
+        "contains": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      { "matchesJsonPath": "$.accountId" },
+      { "matchesJsonPath": "$[?(@.amount <= 150)]" }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "COMPLETED",
+      "transactionId": "TXN-0001",
+      "amount": 100.00,
+      "remainingBalance": 50.00,
+      "currency": "USD"
+    }
+  }
+}

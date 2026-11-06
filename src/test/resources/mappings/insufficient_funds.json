@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/withdrawal",
+    "headers": {
+      "Content-Type": {
+        "contains": "application/json"
+      }
+    },
+	"bodyPatterns": [
+	  { "matchesJsonPath": "$.accountId" },
+	  { "matchesJsonPath": "$.amount" }
+	]
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "error": {
+        "code": "INSUFFICIENT_FUNDS",
+        "message": "The source account does not have enough available balance to complete this withdrawal.",
+        "details": {
+          "availableBalance": 150.00,
+          "requestedAmount": 5000.00,
+          "currency": "USD"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "request": { "method": "GET", "url": "/api/users" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "bodyFileName": "users.json"
+  }
+}
