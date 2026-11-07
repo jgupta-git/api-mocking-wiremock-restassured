@@ -9,7 +9,7 @@
     },
 	"bodyPatterns": [
 	  { "matchesJsonPath": "$.accountId" },
-	  { "matchesJsonPath": "$.amount" }
+	  { "matchesJsonPath": "$[?(@.amount > 150)]" }
 	]
   },
   "response": {
